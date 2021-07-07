@@ -21,11 +21,11 @@ AddEventHandler('sosis:pisir', function()
              xPlayer.removeInventoryItem('sosis', 1)
              xPlayer.addInventoryItem('pismissosis', 1)  
          else
-            TriggerClientEvent('skavronskyynotify:client:SendAlert', source, {type = 'error', text = 'Ekmek yok dolaptan ekmek al!'})
+            TriggerClientEvent('mythic_notify:client:SendAlert', source, {type = 'error', text = 'Ekmek yok dolaptan ekmek al!'})
  
          end
      else
-        TriggerClientEvent('skavronskyynotify:client:SendAlert', source, {type = 'error', text = 'Sosin yok dolaptan sosis al!'})
+        TriggerClientEvent('mythic_notify:client:SendAlert', source, {type = 'error', text = 'Sosin yok dolaptan sosis al!'})
  
      end
 end)
@@ -42,11 +42,11 @@ AddEventHandler('sosis:birlestir', function()
              xPlayer.removeInventoryItem('sosisekmek', 1)
              xPlayer.addInventoryItem('hotdog', 1)  
          else
-            TriggerClientEvent('skavronskyynotify:client:SendAlert', source, {type = 'error', text = 'Ekmek yok dolaptan ekmek al!'})
+            TriggerClientEvent('mythic_notify:client:SendAlert', source, {type = 'error', text = 'Ekmek yok dolaptan ekmek al!'})
             TriggerClientEvent('lanet:motel:npc', source)
          end
      else
-        TriggerClientEvent('skavronskyynotify:client:SendAlert', source, {type = 'error', text = 'Pişmiş Sosise ihtiyacın var!'})
+        TriggerClientEvent('mythic_notify:client:SendAlert', source, {type = 'error', text = 'Pişmiş Sosise ihtiyacın var!'})
      end
 end)
 
@@ -59,7 +59,7 @@ AddEventHandler('sosis:paketle', function()
              xPlayer.removeInventoryItem('hotdog', 1)
              xPlayer.addInventoryItem('paketsosisli', 1)  
          else
-            TriggerClientEvent('skavronskyynotify:client:SendAlert', source, {type = 'error', text = 'Sosislin olmadan paketleyemezsin!'})
+            TriggerClientEvent('mythic_notify:client:SendAlert', source, {type = 'error', text = 'Sosislin olmadan paketleyemezsin!'})
  
          end
 end)
@@ -72,7 +72,7 @@ AddEventHandler('kola:ver', function()
     xPlayer.removeInventoryItem('cash', Config.KolaPrice)
     xPlayer.addInventoryItem('cocacola', 1)
 else
-    TriggerClientEvent('skavronskyynotify:client:SendAlert', source, {type = 'error', text = 'Paran yok ve biz beleşe içirmiyoruz!'})
+    TriggerClientEvent('mythic_notify:client:SendAlert', source, {type = 'error', text = 'Paran yok ve biz beleşe içirmiyoruz!'})
  end
 end)
 
@@ -84,7 +84,7 @@ AddEventHandler('sprite:ver', function()
     xPlayer.removeInventoryItem('cash', Config.SpritePrice)
     xPlayer.addInventoryItem('sprite', 1)
 else
-    TriggerClientEvent('skavronskyynotify:client:SendAlert', source, {type = 'error', text = 'Paran yok ve biz beleşe içirmiyoruz!'})
+    TriggerClientEvent('mythic_notify:client:SendAlert', source, {type = 'error', text = 'Paran yok ve biz beleşe içirmiyoruz!'})
  end
 end)
 
@@ -96,7 +96,7 @@ AddEventHandler('hardal:koy', function()
     xPlayer.removeInventoryItem('hotdog', 1)
     xPlayer.addInventoryItem('hardalsosis', 1)
 else
-    TriggerClientEvent('skavronskyynotify:client:SendAlert', source, {type = 'error', text = 'Sosis olmadan ağzına mı sıkacaksın!'})
+    TriggerClientEvent('mythic_notify:client:SendAlert', source, {type = 'error', text = 'Sosis olmadan ağzına mı sıkacaksın!'})
  end
 end)
 
@@ -108,7 +108,7 @@ AddEventHandler('ketcap:koy', function()
     xPlayer.removeInventoryItem('hotdog', 1)
     xPlayer.addInventoryItem('ketcapsosis', 1)
 else
-    TriggerClientEvent('skavronskyynotify:client:SendAlert', source, {type = 'error', text = 'Sosis olmadan ağzına mı sıkacaksın!'})
+    TriggerClientEvent('mythic_notify:client:SendAlert', source, {type = 'error', text = 'Sosis olmadan ağzına mı sıkacaksın!'})
  end
 end)
 
@@ -124,10 +124,10 @@ AddEventHandler('sosisli:satin:al', function()
         yemek = yemek - 1
         kasaparasi = kasaparasi + Config.YemekPrice
         else
-            TriggerClientEvent('skavronskyynotify:client:SendAlert', source, {type = 'error', text = 'Paran yok!'})
+            TriggerClientEvent('mythic_notify:client:SendAlert', source, {type = 'error', text = 'Paran yok!'})
         end
     else
-        TriggerClientEvent('skavronskyynotify:client:SendAlert', source, {type = 'error', text = 'Yeterli stok yok!'})
+        TriggerClientEvent('mythic_notify:client:SendAlert', source, {type = 'error', text = 'Yeterli stok yok!'})
     end
 end)
 
@@ -140,7 +140,7 @@ end)
 RegisterNetEvent('para:bak')
 AddEventHandler('para:bak', function()
     local xPlayer = ESX.GetPlayerFromId(source)
-    TriggerClientEvent('skavronskyynotify:client:SendAlert', source, {type = 'error', text = 'Kasadaki para '..kasaparasi..'$'})
+    TriggerClientEvent('mythic_notify:client:SendAlert', source, {type = 'error', text = 'Kasadaki para '..kasaparasi..'$'})
      
 end)
 
@@ -151,16 +151,16 @@ AddEventHandler('stok:ekle', function(servergit)
     if stokekleme > 0 then 
         xPlayer.removeInventoryItem('hotdog', servergit)  
         yemek = yemek + servergit
-        TriggerClientEvent('skavronskyynotify:client:SendAlert', source, {type = 'error', text = 'Stok sayısı : '..yemek..' '})
+        TriggerClientEvent('mythic_notify:client:SendAlert', source, {type = 'error', text = 'Stok sayısı : '..yemek..' '})
        
         else
-            TriggerClientEvent('skavronskyynotify:client:SendAlert', source, {type = 'error', text = 'Sosisin yok Stoğa ekleyemezsin!'})
+            TriggerClientEvent('mythic_notify:client:SendAlert', source, {type = 'error', text = 'Sosisin yok Stoğa ekleyemezsin!'})
         end
 end)
 
 RegisterNetEvent('stok:goster')
 AddEventHandler('stok:goster', function()
-    TriggerClientEvent('skavronskyynotify:client:SendAlert', source, {type = 'error', text = 'Stok sayısı : '..yemek..' '})
+    TriggerClientEvent('mythic_notify:client:SendAlert', source, {type = 'error', text = 'Stok sayısı : '..yemek..' '})
 end)
 
 RegisterNetEvent('soda:ver')
